@@ -41,23 +41,19 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-    await bot.start()
-    for all_module in ALL_MODULES:
-        importlib.import_module("LoverMusic.plugins" + all_module)
-    LOGGER("LoverMusic.plugins").info(
-        "Necessary Modules Imported Successfully."
-    )
     await app.start()
-    await Kaal.start()
+    for all_module in ALL_MODULES:
+        importlib.import_module("AnonXMusic.plugins" + all_module)
+    LOGGER("LoverMusic.plugins").info("Successfully Imported Modules...")
+    await userbot.start()
+    await Anony.start()
     try:
-        await Kaal.stream_call(
-            "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4"
-        )
+        await Anony.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("LoverMusic").error(
-            "[ERROR] - \n\nHey, At first Please Turn On VC in Your Logger Group."
+            "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
         )
-        sys.exit()
+        exit()
     except:
         pass
     await Kaal.decorators()
