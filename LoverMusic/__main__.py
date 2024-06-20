@@ -6,7 +6,7 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 from LoverMusic import LOGGER, app, userbot
-from LoverMusic.modules.core.call import Kaal
+from LoverMusic.modules.core.call import Anony
 from LoverMusic.modules.main.database import get_banned_users, get_gbanned
 from LoverMusic.utilities import config
 from LoverMusic.utilities.config import BANNED_USERS
